@@ -4,6 +4,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
@@ -65,5 +67,22 @@ public class ItemRepositoryTest {
         assertThat(findItem.getItemName()).isEqualTo(updateParam.getItemName());
         assertThat(findItem.getPrice()).isEqualTo(updateParam.getPrice());
         assertThat(findItem.getQuantity()).isEqualTo(updateParam.getQuantity());
+    }
+
+
+    @Test
+    void dbCheck() {
+        try (
+                Connection con = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/MYDB?serverTimezone=UTC&characterEncoding=UTF-8",
+                        "root",
+                        "5975"
+                ))
+        {
+            System.out.println(con);
+        }
+        catch(Exception e) {
+
+        }
     }
 }
