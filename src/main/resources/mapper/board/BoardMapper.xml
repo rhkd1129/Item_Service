@@ -2,4 +2,42 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="hello.itemservice.mapper.boardMapper.BoardMapper">
 
+    <insert id="insertBoard" useGeneratedKeys="true" keyProperty="boardId" >
+        insert into BOARD_MGNT_BASE (
+            BOARD_TITLE,
+            BOARD_CONTENT,
+            BOARD_WRITER,
+            BOARD_REGISTER_TIME
+        )
+        values (
+            #{boardTitle},
+            #{boardContent},
+            #{boardWriter},
+            NOW()
+        )
+    </insert>
+    
+    <select id="selectAllBoard">
+        select BOARD_ID,
+               BOARD_TITLE,
+               BOARD_CONTENT,
+               BOARD_WRITER,
+               BOARD_REGISTER_TIME
+        from BOARD_MGNT_BASE
+    </select>
+
+
+    <select id="selectByBoardId">
+        select BOARD_ID,
+               BOARD_TITLE,
+               BOARD_CONTENT,
+               BOARD_WRITER,
+               BOARD_REGISTER_TIME
+        from BOARD_MGNT_BASE
+        where BOARD_ID = #{boardId}
+
+
+
+    </select>
+
 </mapper>
