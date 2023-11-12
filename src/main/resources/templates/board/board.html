@@ -27,11 +27,14 @@
   </div>
   <div>
     <label for="boardContent">내용</label>
-    <input type="text" id="boardContent" name="boardContent" class="form-control" value="10000" th:value="${board.boardContent}" readonly>
+    <textarea id="boardContent" name="boardContent" class="form-control"
+              th:text="${board.boardContent}" th:cols="50" th:rows="10"
+              readonly>
+    </textarea>
   </div>
   <div>
     <label for="boardRegisterTime">작성시간</label>
-    <input type="date" id="boardRegisterTime" name="boardRegisterTime" class="form-control" value="10" th:value="${board.boardRegisterTime}" readonly>
+    <input type="text" id="boardRegisterTime" name="boardRegisterTime" class="form-control" value="10" th:value="${board.boardRegisterTime}" readonly>
   </div>
   <hr class="my-4">
   <div class="row">

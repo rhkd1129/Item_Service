@@ -1,6 +1,7 @@
 package hello.itemservice.service.boardService;
 
 import hello.itemservice.domain.boardDomain.Board;
+import hello.itemservice.domain.boardDomain.UpdateBoard;
 import hello.itemservice.mapper.boardMapper.BoardMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,11 @@ public class BoardSeviceImpl implements BoardService{
         log.info("boardRegisterTime={}", board.getBoardRegisterTime());
 
         return board;
+    }
+
+    @Override
+    public void updateByBoardId(UpdateBoard board) {
+        boardMapper.updateByBoardId(board);
     }
 
 }

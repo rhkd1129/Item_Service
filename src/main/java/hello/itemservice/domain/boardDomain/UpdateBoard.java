@@ -1,30 +1,21 @@
 package hello.itemservice.domain.boardDomain;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.Date;
-
 @Getter
 @Setter
-public class Board {
+public class UpdateBoard {
     private int boardId;
     private String boardTitle;
-    private String boardWriter;
-    private String boardRegisterTime;
     private String boardUpdateTime;
     private String boardContent;
 
-    public Board() {
+    public UpdateBoard() {
     }
 
-    public Board(String boardTitle, String boardWriter, String boardContent) {
+    public UpdateBoard(String boardTitle, String boardContent) {
         this.boardTitle = boardTitle;
-        this.boardWriter = boardWriter;
         this.boardContent = boardContent;
     }
-
-
-
 }
