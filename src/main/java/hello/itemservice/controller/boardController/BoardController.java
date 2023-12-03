@@ -57,8 +57,6 @@ public class BoardController {
         return "redirect:/board/boards/{boardId}";
     }
 
-
-
     @GetMapping("/{boardId}/edit")
     public String editForm(@PathVariable Long boardId, Model model) {
         Board board = boardSeviceImpl.findByBoardId(boardId);
