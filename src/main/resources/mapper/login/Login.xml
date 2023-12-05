@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="hello.itemservice.mapper.LoginMapper">
+    <select id="getList1" resultType="hello.itemservice.domain.login.MemberVo"> /*type-aliases-package으로 지정해주었기때문에 클래스명만 기재하는 것으로 가능*/
+    select id, email, name, password
+    from member
+    </select>
+</mapper>
