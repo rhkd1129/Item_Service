@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-
+//인텔리제이를 이용한 commit test
 @RestController
 @Slf4j
 public class MemberController {
